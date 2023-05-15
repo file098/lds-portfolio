@@ -1,10 +1,10 @@
+$gap: 5px;
+
 .overview-title {
   color: #b2b2b2;
 }
 
 .overview-container {
-  height: auto;
-
   padding: 10px;
   margin: 0 5px;
 
@@ -12,21 +12,18 @@
 }
 
 .overview-grid {
-  height: 100%;
-
   display: flex;
   flex-wrap: wrap;
-}
+  gap: $gap;
 
-.column {
-  display: inherit;
-  flex-flow: column;
+  & .column {
+    display: inherit;
+    flex-flow: column;
 
-  width: 25%;
-  height: auto;
+    width: calc(25% - $gap);
 
-  gap: 5px;
-  // margin: 10px;
+    gap: $gap;
+  }
 }
 
 .filler {
@@ -36,7 +33,7 @@
   border: 1px solid black;
 }
 
-.text-wrapper {
+section {
   margin: 0 10px;
 
   & .about-me {
