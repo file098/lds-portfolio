@@ -70,3 +70,43 @@ section {
     }
   }
 }
+
+// ANIMATIONS
+
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+.column:nth-child(1){
+  :nth-child(2){
+    transition-delay: 200ms;
+  }
+}
+.column:nth-child(2){
+  :nth-child(1){
+    transition-delay: 400ms;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .overview-grid {
+    & .column {
+      width: 100%;
+    }
+  }
+}
